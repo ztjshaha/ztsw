@@ -38,19 +38,19 @@ jobs:
     - name: Setup Python
       uses: actions/setup-python@v2.2.1
       with:
-        python-version:3.7
+        python-version: 3.7
 
-    -name: Install Dependecies
-      run:|
-      sudo apt-get -yqq install unzip git
-      python -m pip install --upgrade pip
-      pip install flake8 pytest scons
+    - name: Install Dependecies
+      run: |
+        sudo apt-get -yqq install unzip git
+        python -m pip install --upgrade pip
+        pip install flake8 pytest scons
     
-    -name: Install ARM  ToolChains
-      run:|
-      wget -q https://github.com/RT-Thread/toolchains-ci/releases/download/arm-2017q2-v6/gcc-arm-none-eabi-6-2017-q2-update-linux.tar.bz2
-      sudo tar xjf gcc-arm-none-eabi-6-2017-q2-update-linux.tar.bz2 -C /opt
-      /opt/gcc-arm-none-eabi-6-2017-q2-update/bin/arm-none-eabi-gcc --version
+    - name: Install ARM  ToolChains
+      run: |
+        wget -q https://github.com/RT-Thread/toolchains-ci/releases/download/arm-2017q2-v6/gcc-arm-none-eabi-6-2017-q2-update-linux.tar.bz2
+        sudo tar xjf gcc-arm-none-eabi-6-2017-q2-update-linux.tar.bz2 -C /opt
+        /opt/gcc-arm-none-eabi-6-2017-q2-update/bin/arm-none-eabi-gcc --version
 
     - name: make
       run: make
