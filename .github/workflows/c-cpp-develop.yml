@@ -54,8 +54,11 @@ jobs:
 
     - name: Install STM32CubeIDE
       uses: xanderhendriks/action-build-stm32cubeide@v7.0 
+      with:
+        project-path : 'component/firmware/'
+        project-target : 'core'
     - run: ls
-
+    - run: ls
 #    - name: make
 #      run: make
 #    - name: make check
