@@ -53,11 +53,8 @@ jobs:
         /opt/gcc-arm-none-eabi-6-2017-q2-update/bin/arm-none-eabi-gcc --version
 
     - name: Install STM32CubeIDE
-      run : |
-        wget -q https://www.st.com/content/ccc/resource/technical/software/sw_development_suite/group0/0c/78/32/f9/97/af/49/e3/stm32cubeide_lnx/files/st-stm32cubeide_1.11.0_13638_20221122_1308_amd64.sh.zip/jcr:content/translations/en.st-stm32cubeide_1.11.0_13638_20221122_1308_amd64.sh.zip
-        unzip -q en.st-stm32cubeide_1.11.0_13638_20221122_1308_amd64.sh.zip
-        ls -l
-        sudo sh ./en.st-stm32cubeide_1.11.0_13638_20221122_1308_amd64.sh
+      uses: xanderhendriks/action-build-stm32cubeide@v7.0 
+    - run: ls
 
 #    - name: make
 #      run: make
