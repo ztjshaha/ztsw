@@ -52,17 +52,17 @@ jobs:
         sudo tar xjf gcc-arm-none-eabi-6-2017-q2-update-linux.tar.bz2 -C /opt
         /opt/gcc-arm-none-eabi-6-2017-q2-update/bin/arm-none-eabi-gcc --version
 
-    - name: Install STM32CubeIDE
+    - name: Install STM32CubeIDE and Building STM32H7B0
       uses: xanderhendriks/action-build-stm32cubeide@v7.0 
-      
       with:
         project-path : 'component/firmware/STM32H7B0/Template'
         project-target : 'Template'
-    - name: Building STM32H7B0
-      with:
-        project-path : 'component/firmware/STM32H7B0/Template'
-        project-target : 'core'
+    #- name: Building STM32H7B0
+    #  with:
+    #    project-path : 'component/firmware/STM32H7B0/Template'
+    #    project-target : 'core'
     - name: Building STM32F411
+      uses: xanderhendriks/action-build-stm32cubeide@v7.0 
       with:
         project-path : 'component/firmware/STM32F411/Template'
         project-target : 'Template'
