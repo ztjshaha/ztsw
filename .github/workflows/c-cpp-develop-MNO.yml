@@ -54,12 +54,19 @@ jobs:
 
     - name: Install STM32CubeIDE
       uses: xanderhendriks/action-build-stm32cubeide@v7.0 
-      with:
-        project-path : 'component/firmware/STM32H7B0/Template'
-        project-target : 'core'
+      
       with:
         project-path : 'component/firmware/STM32H7B0/Template'
         project-target : 'Template'
+    - name: Building STM32H7B0
+      with:
+        project-path : 'component/firmware/STM32H7B0/Template'
+        project-target : 'core'
+    - name: Building STM32F411
+      with:
+        project-path : 'component/firmware/STM32F411/Template'
+        project-target : 'Template'
+        
     - run: ls
     - run: ls
 #    - name: make
